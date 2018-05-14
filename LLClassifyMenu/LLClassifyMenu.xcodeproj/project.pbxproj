@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		334372E620A9678C00303171 /* tagPlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 334372E420A9678C00303171 /* tagPlist.json */; };
+		334372EA20A9731800303171 /* LLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 334372E820A9731800303171 /* LLTableViewCell.m */; };
+		334372EB20A9731800303171 /* LLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 334372E920A9731800303171 /* LLTableViewCell.xib */; };
+		334372EE20A9748200303171 /* typeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334372ED20A9748200303171 /* typeListModel.m */; };
+		334372F520A9754C00303171 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334372F120A9754B00303171 /* NSObject+YYModel.m */; };
+		334372F620A9754C00303171 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 334372F320A9754B00303171 /* YYClassInfo.m */; };
+		334372F920A9759A00303171 /* forumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334372F820A9759A00303171 /* forumModel.m */; };
 		33D774D320A52BFD0078EBB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D774D220A52BFD0078EBB5 /* AppDelegate.m */; };
 		33D774D620A52BFD0078EBB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D774D520A52BFD0078EBB5 /* ViewController.m */; };
-		33D774D920A52BFD0078EBB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D774D720A52BFD0078EBB5 /* Main.storyboard */; };
 		33D774DB20A52BFD0078EBB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D774DA20A52BFD0078EBB5 /* Assets.xcassets */; };
 		33D774DE20A52BFD0078EBB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D774DC20A52BFD0078EBB5 /* LaunchScreen.storyboard */; };
 		33D774E120A52BFD0078EBB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D774E020A52BFD0078EBB5 /* main.m */; };
@@ -37,12 +42,23 @@
 
 /* Begin PBXFileReference section */
 		334372E420A9678C00303171 /* tagPlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tagPlist.json; sourceTree = "<group>"; };
+		334372E720A9731800303171 /* LLTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLTableViewCell.h; sourceTree = "<group>"; };
+		334372E820A9731800303171 /* LLTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLTableViewCell.m; sourceTree = "<group>"; };
+		334372E920A9731800303171 /* LLTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LLTableViewCell.xib; sourceTree = "<group>"; };
+		334372EC20A9748200303171 /* typeListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = typeListModel.h; sourceTree = "<group>"; };
+		334372ED20A9748200303171 /* typeListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = typeListModel.m; sourceTree = "<group>"; };
+		334372F020A9754B00303171 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		334372F120A9754B00303171 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		334372F220A9754B00303171 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		334372F320A9754B00303171 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		334372F420A9754B00303171 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		334372F720A9759A00303171 /* forumModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = forumModel.h; sourceTree = "<group>"; };
+		334372F820A9759A00303171 /* forumModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = forumModel.m; sourceTree = "<group>"; };
 		33D774CE20A52BFD0078EBB5 /* LLClassifyMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLClassifyMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D774D120A52BFD0078EBB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		33D774D220A52BFD0078EBB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		33D774D420A52BFD0078EBB5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		33D774D520A52BFD0078EBB5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		33D774D820A52BFD0078EBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33D774DA20A52BFD0078EBB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33D774DD20A52BFD0078EBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33D774DF20A52BFD0078EBB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				334372E420A9678C00303171 /* tagPlist.json */,
+				334372F720A9759A00303171 /* forumModel.h */,
+				334372F820A9759A00303171 /* forumModel.m */,
+				334372EC20A9748200303171 /* typeListModel.h */,
+				334372ED20A9748200303171 /* typeListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -91,8 +111,23 @@
 		334372E520A9678C00303171 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				334372E720A9731800303171 /* LLTableViewCell.h */,
+				334372E820A9731800303171 /* LLTableViewCell.m */,
+				334372E920A9731800303171 /* LLTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		334372EF20A9754B00303171 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				334372F020A9754B00303171 /* NSObject+YYModel.h */,
+				334372F120A9754B00303171 /* NSObject+YYModel.m */,
+				334372F220A9754B00303171 /* YYClassInfo.h */,
+				334372F320A9754B00303171 /* YYClassInfo.m */,
+				334372F420A9754B00303171 /* YYModel.h */,
+			);
+			path = YYModel;
 			sourceTree = "<group>";
 		};
 		33D774C520A52BFD0078EBB5 = {
@@ -118,13 +153,13 @@
 		33D774D020A52BFD0078EBB5 /* LLClassifyMenu */ = {
 			isa = PBXGroup;
 			children = (
+				334372EF20A9754B00303171 /* YYModel */,
 				334372E320A9678C00303171 /* Model */,
 				334372E520A9678C00303171 /* View */,
 				33D774D120A52BFD0078EBB5 /* AppDelegate.h */,
 				33D774D220A52BFD0078EBB5 /* AppDelegate.m */,
 				33D774D420A52BFD0078EBB5 /* ViewController.h */,
 				33D774D520A52BFD0078EBB5 /* ViewController.m */,
-				33D774D720A52BFD0078EBB5 /* Main.storyboard */,
 				33D774DA20A52BFD0078EBB5 /* Assets.xcassets */,
 				33D774DC20A52BFD0078EBB5 /* LaunchScreen.storyboard */,
 				33D774DF20A52BFD0078EBB5 /* Info.plist */,
@@ -260,7 +295,7 @@
 				33D774DE20A52BFD0078EBB5 /* LaunchScreen.storyboard in Resources */,
 				334372E620A9678C00303171 /* tagPlist.json in Resources */,
 				33D774DB20A52BFD0078EBB5 /* Assets.xcassets in Resources */,
-				33D774D920A52BFD0078EBB5 /* Main.storyboard in Resources */,
+				334372EB20A9731800303171 /* LLTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +321,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D774D620A52BFD0078EBB5 /* ViewController.m in Sources */,
+				334372F920A9759A00303171 /* forumModel.m in Sources */,
+				334372EE20A9748200303171 /* typeListModel.m in Sources */,
 				33D774E120A52BFD0078EBB5 /* main.m in Sources */,
+				334372F520A9754C00303171 /* NSObject+YYModel.m in Sources */,
 				33D774D320A52BFD0078EBB5 /* AppDelegate.m in Sources */,
+				334372EA20A9731800303171 /* LLTableViewCell.m in Sources */,
+				334372F620A9754C00303171 /* YYClassInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,14 +363,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		33D774D720A52BFD0078EBB5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				33D774D820A52BFD0078EBB5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		33D774DC20A52BFD0078EBB5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
