@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "forumModel.h"
+#import "typeListView.h"
+
 @interface LLTableViewCell : UITableViewCell
 
 @property (nonatomic,strong) forumModel *model;
@@ -22,4 +24,5 @@
  上下箭头
  */
 @property (weak, nonatomic) IBOutlet UIImageView *arrowsImage;
+@property (weak, nonatomic) IBOutlet typeListView *typeListView;
 @end

@@ -21,4 +21,8 @@
 -(void)setModel:(forumModel *)model {
     _titleName.text = model.forum_name;
 }
+
+-(void)awakeFromNib {
+
+}
 @end

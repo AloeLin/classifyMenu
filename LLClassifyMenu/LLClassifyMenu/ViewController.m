@@ -11,6 +11,7 @@
 #import "forumModel.h"
 #import "typeListModel.h"
 #import "YYModel.h"
+#import "typeListView.h"
 
 static NSString *identifier = @"identifierCell";
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -82,12 +83,17 @@ static NSString *identifier = @"identifierCell";
     if (!cell) {
         cell = [[LLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    
     cell.model =  self.forumArray[indexPath.row];
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50.f;
+    return 200.f;
 }
 
 #pragma mark - inital
