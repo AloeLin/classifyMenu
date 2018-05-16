@@ -36,12 +36,6 @@ static NSString *identifier = @"identifierCell";
  */
 @property (nonatomic,strong) NSMutableArray *selectedRowArray;
 
-
-/**
- 选中cell
- */
-@property (nonatomic,assign) NSInteger selectedRow;
-
 @property (nonatomic,assign) CGFloat cellHeight;
 @end
 
@@ -94,7 +88,7 @@ static NSString *identifier = @"identifierCell";
 
 -(LLTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    [cell createCellTypeListViewsWithItemInfo:self.typeListArray[indexPath.row] isOpenDetail:(indexPath.row == _selectedRow) ? YES : NO];
+    [cell createCellTypeListViewsWithItemInfo:self.typeListArray[indexPath.row] isOpenDetail:([self.selectedRowArray containsObject:@(indexPath.row)]) ? YES : NO];
     cell.model =  self.forumArray[indexPath.row];
     _cellHeight =  cell.cellHeight;    
 //    NSLog(@"cellheight === %f indexrow ==== %ld",_cellHeight,(long)indexPath.row);
@@ -103,19 +97,23 @@ static NSString *identifier = @"identifierCell";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    _selectedRow = indexPath.row;
+    if ([self.selectedRowArray containsObject:@(indexPath.row)]) {
+        [self.selectedRowArray removeObject:@(indexPath.row)];
+        [self.tableView reloadData];
+        return;
+    }
+    [self.selectedRowArray addObject:@(indexPath.row)];
     [self.tableView reloadData];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height;
-    if (indexPath.row == _selectedRow) {
-        height = _cellHeight;
-    }else {
-        height = 50.f;
+    
+    if ([self.selectedRowArray containsObject:@(indexPath.row)]) {
+        return _cellHeight;
     }
+    return 50.f;
 //    NSLog(@"cellheight ********* %f indexrow ********* %ld selectrow ********* %ld ",_cellHeight,(long)indexPath.row,_selectedRow);
-    return  (indexPath.row == _selectedRow) ?  _cellHeight : 50.f;
+//    return  (indexPath.row == _selectedRow) ?  _cellHeight : 50.f;
     
 }
 
