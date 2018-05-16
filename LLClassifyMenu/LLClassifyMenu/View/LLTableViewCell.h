@@ -21,6 +21,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *selectedRadio;
 
 
+/**
+ 选中的标题
+ */
+@property (weak, nonatomic) IBOutlet UILabel *selectedTitle;
 
 /**
  上下箭头

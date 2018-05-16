@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+ typedef void(^CallBackBlock)(NSString *result);
 @interface typeListView : UIView
 
 /**
@@ -15,7 +15,12 @@
  */
 @property (nonatomic,strong) NSArray *contentArray;
 
-@property (nonatomic,assign) CGFloat maxHeight;
 
+/**
+ 当前视图的高度
+ */
+@property (nonatomic,assign) CGFloat maxHeight; 
+
+@property (nonatomic,copy) CallBackBlock callBackBlock;
 @end
 

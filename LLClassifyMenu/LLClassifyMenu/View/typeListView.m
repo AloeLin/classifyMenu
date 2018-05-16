@@ -41,6 +41,8 @@
         [button setTitle:model.typename forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:12];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
+        
         
         x += button.frame.size.width +10;
         i++;
@@ -49,5 +51,14 @@
     }
 }
 
+
+/**
+ 选中标题的点击事件
+ */
+- (void)selectButton:(UIButton *)sender {
+    if (self.callBackBlock) {
+        self.callBackBlock(sender.titleLabel.text);
+    }
+}
 
 @end
