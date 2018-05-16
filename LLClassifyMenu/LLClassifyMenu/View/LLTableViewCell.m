@@ -18,11 +18,24 @@
 
 @implementation LLTableViewCell
 
+-(void)awakeFromNib {
+    [super awakeFromNib];
+
+}
+
 -(void)setModel:(forumModel *)model {
     _titleName.text = model.forum_name;
 }
 
--(void)awakeFromNib {
-
-}
+- (void)createCellTypeListViewsWithItemInfo:(NSArray *)infoArray isOpenDetail:(BOOL)isOpen{
+    self.typeListView.contentArray = infoArray;
+    self.cellHeight = self.typeListView.maxHeight + 50;
+    NSLog(@"maxHeight------------------------------------------%f",self.typeListView.maxHeight);
+    if (isOpen) {
+        self.typeListView.hidden = NO;
+    }else {
+        self.typeListView.hidden = YES;
+        
+    }
+} 
 @end

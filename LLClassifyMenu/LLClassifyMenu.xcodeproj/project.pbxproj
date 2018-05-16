@@ -15,7 +15,6 @@
 		334372F620A9754C00303171 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 334372F320A9754B00303171 /* YYClassInfo.m */; };
 		334372F920A9759A00303171 /* forumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334372F820A9759A00303171 /* forumModel.m */; };
 		334372FE20A984DD00303171 /* typeListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 334372FD20A984DD00303171 /* typeListView.m */; };
-		3343730120A98D1200303171 /* TagsFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3343730020A98D1200303171 /* TagsFrame.m */; };
 		33D774D320A52BFD0078EBB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D774D220A52BFD0078EBB5 /* AppDelegate.m */; };
 		33D774D620A52BFD0078EBB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D774D520A52BFD0078EBB5 /* ViewController.m */; };
 		33D774DB20A52BFD0078EBB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D774DA20A52BFD0078EBB5 /* Assets.xcassets */; };
@@ -58,8 +57,6 @@
 		334372F820A9759A00303171 /* forumModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = forumModel.m; sourceTree = "<group>"; };
 		334372FC20A984DD00303171 /* typeListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = typeListView.h; sourceTree = "<group>"; };
 		334372FD20A984DD00303171 /* typeListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = typeListView.m; sourceTree = "<group>"; };
-		334372FF20A98D1200303171 /* TagsFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagsFrame.h; sourceTree = "<group>"; };
-		3343730020A98D1200303171 /* TagsFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagsFrame.m; sourceTree = "<group>"; };
 		33D774CE20A52BFD0078EBB5 /* LLClassifyMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLClassifyMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D774D120A52BFD0078EBB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		33D774D220A52BFD0078EBB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -122,8 +119,6 @@
 				334372E920A9731800303171 /* LLTableViewCell.xib */,
 				334372FC20A984DD00303171 /* typeListView.h */,
 				334372FD20A984DD00303171 /* typeListView.m */,
-				334372FF20A98D1200303171 /* TagsFrame.h */,
-				3343730020A98D1200303171 /* TagsFrame.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -338,7 +333,6 @@
 				33D774D320A52BFD0078EBB5 /* AppDelegate.m in Sources */,
 				334372EA20A9731800303171 /* LLTableViewCell.m in Sources */,
 				334372FE20A984DD00303171 /* typeListView.m in Sources */,
-				3343730120A98D1200303171 /* TagsFrame.m in Sources */,
 				334372F620A9754C00303171 /* YYClassInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

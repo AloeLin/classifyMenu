@@ -8,38 +8,46 @@
 
 #import "typeListView.h"
 #import "typeListModel.h"
-#import "TagsFrame.h"
 
-@interface typeListView(){
-     TagsFrame *_frame;
-}
-
-
-@end
-
+#define  kScreen_Width [UIScreen mainScreen].bounds.size.width
 @implementation typeListView
 
-
-
--(void)awakeFromNib {
-   
-        self.contentArray = @[@"全部",@"哈哈哈哈哈哈",@"的点点滴滴多多",@"他啦啦啦啦啦啦",@"发哈几个",@"鞥UNv",@"麓山国际后悔过",@"lllllldaffff",@"lalalalall",@"啦啦啦啦啦啦",@"喵喵吗喵毛",@"囖囖囖囖大家开发及囖囖咯",@"安安",@"对对对",@"错",@"初音MIKU"];
-        [self initUI];
-   
-}
-
-- (void)initUI {
-    for (int i = 0; i < self.contentArray.count; i ++) {
-//        typeListModel *model = self.contentArray[i];
-        UIButton *tagsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [tagsBtn setTitle:self.contentArray[i] forState:UIControlStateNormal];
-        [tagsBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        tagsBtn.titleLabel.font = [UIFont systemFontOfSize:13.f];
-        tagsBtn.backgroundColor = [UIColor whiteColor];
-        tagsBtn.frame = CGRectFromString(_frame.tagsFrames[i]);
+#pragma mark - 动态设置个性标签长度/换行
+-(void) setContentArray:(NSArray *)contentArray
+{
+    _contentArray = contentArray;
+    float x = 10;
+    float y =15;
+    int i =0;
+    
+    //根据字数设置label的宽度
+    for (typeListModel *model in _contentArray) {
         
-        [self addSubview:tagsBtn];
+        //设置一个行高上限
+        CGSize size =CGSizeMake(320,2000);
+        NSDictionary *attribute =@{NSFontAttributeName:[UIFont systemFontOfSize:8]};
+        CGSize labelsize = [model.typename boundingRectWithSize:size options:NSStringDrawingTruncatesLastVisibleLine  attributes:attribute context:nil].size;
+        if (kScreen_Width - x < labelsize.width +40)
+        {
+            x = 10;
+            y += 35;
+        }
+        
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(x, y, labelsize.width + 40, 30)];
+        button.backgroundColor = [UIColor lightGrayColor];
+        [self addSubview:button];
+        button.tag =8000 + i;
+        
+        [button setTitle:model.typename forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:12];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        
+        x += button.frame.size.width +10;
+        i++;
+//      这里涉及到的内容是返回自定义高度
+        _maxHeight = button.frame.origin.y + button.frame.size.height + 15;
     }
 }
+
 
 @end

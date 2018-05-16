@@ -30,6 +30,19 @@ static NSString *identifier = @"identifierCell";
  */
 @property (nonatomic,strong) NSMutableArray *typeListArray;
 
+
+/**
+ 需要展开的cell集合
+ */
+@property (nonatomic,strong) NSMutableArray *selectedRowArray;
+
+
+/**
+ 选中cell
+ */
+@property (nonatomic,assign) NSInteger selectedRow;
+
+@property (nonatomic,assign) CGFloat cellHeight;
 @end
 
 @implementation ViewController
@@ -80,20 +93,29 @@ static NSString *identifier = @"identifierCell";
 
 -(LLTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    if (!cell) {
-        cell = [[LLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    
+    [cell createCellTypeListViewsWithItemInfo:self.typeListArray[indexPath.row] isOpenDetail:(indexPath.row == _selectedRow) ? YES : NO];
     cell.model =  self.forumArray[indexPath.row];
+    _cellHeight =  cell.cellHeight;    
+//    NSLog(@"cellheight === %f indexrow ==== %ld",_cellHeight,(long)indexPath.row);
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+ 
+    _selectedRow = indexPath.row;
+    [self.tableView reloadData];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 200.f;
+    CGFloat height;
+    if (indexPath.row == _selectedRow) {
+        height = _cellHeight;
+    }else {
+        height = 50.f;
+    }
+//    NSLog(@"cellheight ********* %f indexrow ********* %ld selectrow ********* %ld ",_cellHeight,(long)indexPath.row,_selectedRow);
+    return  (indexPath.row == _selectedRow) ?  _cellHeight : 50.f;
+    
 }
 
 #pragma mark - inital
@@ -110,5 +132,12 @@ static NSString *identifier = @"identifierCell";
         _typeListArray  = [NSMutableArray array];
     }
     return _typeListArray;
+}
+
+-(NSMutableArray *)selectedRowArray {
+    if (!_selectedRowArray) {
+        _selectedRowArray = [NSMutableArray array];
+    }
+    return _selectedRowArray;
 }
 @end

@@ -15,5 +15,7 @@
  */
 @property (nonatomic,strong) NSArray *contentArray;
 
+@property (nonatomic,assign) CGFloat maxHeight;
+
 @end
 
