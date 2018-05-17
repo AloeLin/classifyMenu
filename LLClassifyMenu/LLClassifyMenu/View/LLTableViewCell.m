@@ -18,6 +18,10 @@
 
 @implementation LLTableViewCell 
 
+-(void)awakeFromNib {
+    [super awakeFromNib];
+}
+
 -(void)setModel:(forumModel *)model {
     _titleName.text = model.forum_name;
 }
@@ -25,18 +29,19 @@
 - (void)createCellTypeListViewsWithItemInfo:(NSArray *)infoArray isOpenDetail:(BOOL)isOpen{
     self.typeListView.contentArray = infoArray;
     self.cellHeight = self.typeListView.maxHeight + 50;
-//    NSLog(@"maxHeight------------------------------------------%f",self.typeListView.maxHeight);
+    //    NSLog(@"maxHeight------------------------------------------%f",self.typeListView.maxHeight)
     if (isOpen) {
         self.typeListView.hidden = NO;
-        self.arrowsImage.image = [UIImage imageNamed:@"ic_arrows_up"];
-        self.selectedRadio.image = [UIImage imageNamed:@"ic_radiobutton_checked"];
+        self.arrowsImage.selected = YES;
+        self.selectedRadio.selected = YES;
     }else {
         self.typeListView.hidden = YES;
-        self.arrowsImage.image = [UIImage imageNamed:@"ic_arrows_down"];
-        self.selectedRadio.image = [UIImage imageNamed:@"ic_radiobutton_normal"];
+        self.arrowsImage.selected = NO;
+        self.selectedRadio.selected = NO;
     }
     self.typeListView.callBackBlock = ^(NSString *result) {
         self.selectedTitle.text = result;
     };
-} 
+}
+
 @end

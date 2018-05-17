@@ -77,7 +77,7 @@ static NSString *identifier = @"identifierCell";
     self.tableView = tableView;
     [self.view addSubview:self.tableView];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"LLTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:identifier];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LLTableViewCell class]) bundle:nil] forCellReuseIdentifier:identifier];
 }
 
 #pragma mark - tableViewDelegate
@@ -90,7 +90,10 @@ static NSString *identifier = @"identifierCell";
     LLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     [cell createCellTypeListViewsWithItemInfo:self.typeListArray[indexPath.row] isOpenDetail:([self.selectedRowArray containsObject:@(indexPath.row)]) ? YES : NO];
     cell.model =  self.forumArray[indexPath.row];
-    _cellHeight =  cell.cellHeight;    
+    cell.testLabel.text = [NSString stringWithFormat:@"********* %ld  ",(long)indexPath.row];
+    _cellHeight =  cell.cellHeight;
+    //删除cell的所有子视图
+ 
 //    NSLog(@"cellheight === %f indexrow ==== %ld",_cellHeight,(long)indexPath.row);
     return cell;
 }

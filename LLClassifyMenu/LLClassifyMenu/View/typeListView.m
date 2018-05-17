@@ -10,17 +10,25 @@
 #import "typeListModel.h"
 
 #define  kScreen_Width [UIScreen mainScreen].bounds.size.width
+@interface typeListView()
+@property (nonatomic,strong) NSArray *testArray;
+@end
 @implementation typeListView
+
 
 #pragma mark - 动态设置个性标签长度/换行
 -(void) setContentArray:(NSArray *)contentArray
 {
+    //为了解决cell重用是 重复添加的问题
+    for( UIView * v in self.subviews ){
+        [v removeFromSuperview];
+    }
     _contentArray = contentArray;
     float x = 10;
     float y =15;
     int i =0;
     
-    //根据字数设置label的宽度
+    //根据字数设置label的宽度   for (typeListModel *model in _contentArray)
     for (typeListModel *model in _contentArray) {
         
         //设置一个行高上限

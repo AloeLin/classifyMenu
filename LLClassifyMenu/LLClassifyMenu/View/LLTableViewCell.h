@@ -18,8 +18,9 @@
 /**
  选中圆圈
  */
-@property (weak, nonatomic) IBOutlet UIImageView *selectedRadio;
+@property (weak, nonatomic) IBOutlet UIButton *selectedRadio;
 
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
 /**
  选中的标题
@@ -29,7 +30,7 @@
 /**
  上下箭头
  */
-@property (weak, nonatomic) IBOutlet UIImageView *arrowsImage;
+@property (weak, nonatomic) IBOutlet UIButton *arrowsImage;
 
 @property (weak, nonatomic) IBOutlet typeListView *typeListView;
 
