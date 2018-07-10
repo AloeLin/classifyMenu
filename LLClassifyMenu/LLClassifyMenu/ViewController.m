@@ -12,6 +12,7 @@
 #import "typeListModel.h"
 #import "YYModel.h"
 #import "typeListView.h"
+#import "FRBTipPopView.h"
 
 static NSString *identifier = @"identifierCell";
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -37,6 +38,9 @@ static NSString *identifier = @"identifierCell";
 @property (nonatomic,strong) NSMutableArray *selectedRowArray;
 
 @property (nonatomic,assign) CGFloat cellHeight;
+
+@property (nonatomic,strong)UIView *tipView;
+
 @end
 
 @implementation ViewController
@@ -89,13 +93,30 @@ static NSString *identifier = @"identifierCell";
 -(LLTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     [cell createCellTypeListViewsWithItemInfo:self.typeListArray[indexPath.row] isOpenDetail:([self.selectedRowArray containsObject:@(indexPath.row)]) ? YES : NO];
+    if (indexPath.row == 2) {
+        cell.remindButton.hidden = NO;
+        [cell.remindButton addTarget:self action:@selector(event:) forControlEvents:UIControlEventTouchUpInside];
+    }
     cell.model =  self.forumArray[indexPath.row];
     cell.testLabel.text = [NSString stringWithFormat:@"********* %ld  ",(long)indexPath.row];
     _cellHeight =  cell.cellHeight;
     //删除cell的所有子视图
- 
 //    NSLog(@"cellheight === %f indexrow ==== %ld",_cellHeight,(long)indexPath.row);
     return cell;
+}
+
+-(void)event:(UIButton *)sender
+{
+    CGPoint point = sender.center;
+    point = [self.tableView convertPoint:point fromView:sender.superview]; 
+    FRBTipPopView *tipView = [[FRBTipPopView alloc] init];
+    tipView.contentText = @"不包含尚在募集中的标的投资金额";
+    tipView.frame = CGRectMake(point.x - 20, point.y + 20, 220, 50);
+    [tipView show:self.tableView];
+ 
+    tipView.block = ^(id result) {
+        sender.selected = NO;
+    };
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -116,30 +137,41 @@ static NSString *identifier = @"identifierCell";
     }
     return 50.f;
 //    NSLog(@"cellheight ********* %f indexrow ********* %ld selectrow ********* %ld ",_cellHeight,(long)indexPath.row,_selectedRow);
-//    return  (indexPath.row == _selectedRow) ?  _cellHeight : 50.f;
-    
+
 }
 
 #pragma mark - inital
 
--(NSMutableArray *)forumArray {
+-(NSMutableArray *)forumArray
+{
     if (!_forumArray) {
         _forumArray = [NSMutableArray array];
     }
     return _forumArray;
 }
 
--(NSMutableArray *)typeListArray {
+-(NSMutableArray *)typeListArray
+{
     if (!_typeListArray) {
         _typeListArray  = [NSMutableArray array];
     }
     return _typeListArray;
 }
 
--(NSMutableArray *)selectedRowArray {
+-(NSMutableArray *)selectedRowArray
+{
     if (!_selectedRowArray) {
         _selectedRowArray = [NSMutableArray array];
     }
     return _selectedRowArray;
+}
+
+-(UIView *)tipView
+{
+    if (!_tipView) {
+        _tipView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+
+    }
+    return _tipView;
 }
 @end

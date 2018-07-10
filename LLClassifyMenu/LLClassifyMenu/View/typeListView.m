@@ -24,9 +24,7 @@
         [v removeFromSuperview];
     }
     _contentArray = contentArray;
-    float x = 10;
-    float y =15;
-    int i =0;
+    float y =0;
     
     //根据字数设置label的宽度   for (typeListModel *model in _contentArray)
     for (typeListModel *model in _contentArray) {
@@ -35,27 +33,20 @@
         CGSize size =CGSizeMake(320,2000);
         NSDictionary *attribute =@{NSFontAttributeName:[UIFont systemFontOfSize:8]};
         CGSize labelsize = [model.typename boundingRectWithSize:size options:NSStringDrawingTruncatesLastVisibleLine  attributes:attribute context:nil].size;
-        if (kScreen_Width - x < labelsize.width +40)
-        {
-            x = 10;
-            y += 35;
-        }
+    
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, y, labelsize.width + 40, 40)];
+        titleLabel.text = model.typename;
+        titleLabel.font = [UIFont systemFontOfSize:12];
+        [self addSubview:titleLabel];
         
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(x, y, labelsize.width + 40, 30)];
-        button.backgroundColor = [UIColor lightGrayColor];
-        [self addSubview:button];
-        button.tag =8000 + i;
+        UILabel *descLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) -   labelsize.width - 60 , y, labelsize.width + 40, 40)];
+        descLabel.text = model.typename;
+        descLabel.font = [UIFont systemFontOfSize:12];
+        [self addSubview:descLabel];
         
-        [button setTitle:model.typename forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:12];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-        x += button.frame.size.width +10;
-        i++;
-//      这里涉及到的内容是返回自定义高度
-        _maxHeight = button.frame.origin.y + button.frame.size.height + 15;
+        y += 40;
+        //      这里涉及到的内容是返回自定义高度
+        _maxHeight = titleLabel.frame.origin.y + titleLabel.frame.size.height;
     }
 }
 

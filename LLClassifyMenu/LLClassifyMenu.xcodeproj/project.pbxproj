@@ -22,6 +22,8 @@
 		33D774E120A52BFD0078EBB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D774E020A52BFD0078EBB5 /* main.m */; };
 		33D774EB20A52BFD0078EBB5 /* LLClassifyMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D774EA20A52BFD0078EBB5 /* LLClassifyMenuTests.m */; };
 		33D774F620A52BFE0078EBB5 /* LLClassifyMenuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D774F520A52BFE0078EBB5 /* LLClassifyMenuUITests.m */; };
+		BF8350E820F3129800BB55B4 /* FRBTipPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8350E720F3129800BB55B4 /* FRBTipPopView.m */; };
+		BF8350EA20F312B800BB55B4 /* FRBTipPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8350E920F312B800BB55B4 /* FRBTipPopView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,9 @@
 		33D774F120A52BFE0078EBB5 /* LLClassifyMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LLClassifyMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D774F520A52BFE0078EBB5 /* LLClassifyMenuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLClassifyMenuUITests.m; sourceTree = "<group>"; };
 		33D774F720A52BFE0078EBB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF8350E620F3129800BB55B4 /* FRBTipPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBTipPopView.h; sourceTree = "<group>"; };
+		BF8350E720F3129800BB55B4 /* FRBTipPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRBTipPopView.m; sourceTree = "<group>"; };
+		BF8350E920F312B800BB55B4 /* FRBTipPopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FRBTipPopView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,9 @@
 				334372E920A9731800303171 /* LLTableViewCell.xib */,
 				334372FC20A984DD00303171 /* typeListView.h */,
 				334372FD20A984DD00303171 /* typeListView.m */,
+				BF8350E620F3129800BB55B4 /* FRBTipPopView.h */,
+				BF8350E720F3129800BB55B4 /* FRBTipPopView.m */,
+				BF8350E920F312B800BB55B4 /* FRBTipPopView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 				33D774DE20A52BFD0078EBB5 /* LaunchScreen.storyboard in Resources */,
 				334372E620A9678C00303171 /* tagPlist.json in Resources */,
 				33D774DB20A52BFD0078EBB5 /* Assets.xcassets in Resources */,
+				BF8350EA20F312B800BB55B4 /* FRBTipPopView.xib in Resources */,
 				334372EB20A9731800303171 /* LLTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +343,7 @@
 				334372EA20A9731800303171 /* LLTableViewCell.m in Sources */,
 				334372FE20A984DD00303171 /* typeListView.m in Sources */,
 				334372F620A9754C00303171 /* YYClassInfo.m in Sources */,
+				BF8350E820F3129800BB55B4 /* FRBTipPopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

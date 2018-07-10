@@ -14,6 +14,7 @@
  */
 @property (weak, nonatomic) IBOutlet UILabel *titleName; 
 
+
 @end
 
 @implementation LLTableViewCell 
@@ -42,6 +43,13 @@
     self.typeListView.callBackBlock = ^(NSString *result) {
         self.selectedTitle.text = result;
     };
+}
+
+- (IBAction)remindEvent:(UIButton *)sender {
+    NSLog(@"remindEvent===================");
+    NSLog(@"%@",NSStringFromCGRect(sender.frame));
+    
+    
 }
 
 @end

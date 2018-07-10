@@ -60,20 +60,28 @@
                                 <state key="normal" title="Button" image="ic_arrows_down"/>
                                 <state key="selected" image="ic_arrows_up"/>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQ7-7i-Lpm">
+                                <rect key="frame" x="100" y="11" width="46" height="30"/>
+                                <state key="normal" title="点击"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0j7-Qe-DWG" firstAttribute="centerY" secondItem="DlB-Az-2f8" secondAttribute="centerY" id="6Cl-dg-6r1"/>
                             <constraint firstItem="ob2-G1-xBc" firstAttribute="centerY" secondItem="DlB-Az-2f8" secondAttribute="centerY" id="KPp-0o-0WG"/>
+                            <constraint firstItem="ob2-G1-xBc" firstAttribute="leading" secondItem="TQ7-7i-Lpm" secondAttribute="trailing" constant="24" id="N17-XW-UFG"/>
                             <constraint firstItem="bUa-46-vBO" firstAttribute="leading" secondItem="0j7-Qe-DWG" secondAttribute="trailing" constant="10" id="Ph2-FP-W4i"/>
                             <constraint firstAttribute="height" constant="50" id="Tmg-Y5-ub5"/>
                             <constraint firstAttribute="trailing" secondItem="bUa-46-vBO" secondAttribute="trailing" constant="10" id="aWH-5j-41C"/>
+                            <constraint firstItem="TQ7-7i-Lpm" firstAttribute="leading" secondItem="nzq-O4-SYz" secondAttribute="trailing" constant="8" id="byt-fK-NEE"/>
                             <constraint firstItem="Wbo-vp-ns8" firstAttribute="centerY" secondItem="DlB-Az-2f8" secondAttribute="centerY" id="caK-It-vRT"/>
                             <constraint firstItem="ob2-G1-xBc" firstAttribute="centerY" secondItem="DlB-Az-2f8" secondAttribute="centerY" id="fRF-Lk-ff6"/>
+                            <constraint firstAttribute="bottom" secondItem="TQ7-7i-Lpm" secondAttribute="bottom" constant="9" id="k58-TW-fOO"/>
                             <constraint firstItem="ob2-G1-xBc" firstAttribute="centerX" secondItem="DlB-Az-2f8" secondAttribute="centerX" id="kMI-wp-CvX"/>
                             <constraint firstItem="nzq-O4-SYz" firstAttribute="centerY" secondItem="DlB-Az-2f8" secondAttribute="centerY" id="nlN-Jr-WV2"/>
                             <constraint firstItem="bUa-46-vBO" firstAttribute="centerY" secondItem="DlB-Az-2f8" secondAttribute="centerY" id="p0p-6o-B8h"/>
                             <constraint firstItem="nzq-O4-SYz" firstAttribute="leading" secondItem="Wbo-vp-ns8" secondAttribute="trailing" constant="10" id="qZ3-pm-SOU"/>
+                            <constraint firstItem="TQ7-7i-Lpm" firstAttribute="top" secondItem="DlB-Az-2f8" secondAttribute="top" constant="11" id="uGM-nS-Fxh"/>
                             <constraint firstItem="0j7-Qe-DWG" firstAttribute="height" secondItem="nzq-O4-SYz" secondAttribute="height" id="zHi-oh-GwW"/>
                             <constraint firstItem="Wbo-vp-ns8" firstAttribute="leading" secondItem="DlB-Az-2f8" secondAttribute="leading" constant="15" id="zkk-1f-clp"/>
                             <constraint firstItem="nzq-O4-SYz" firstAttribute="centerY" secondItem="DlB-Az-2f8" secondAttribute="centerY" id="zx6-g2-B2p"/>
@@ -97,6 +105,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="arrowsImage" destination="bUa-46-vBO" id="odw-Xm-kZN"/>
+                <outlet property="remindButton" destination="TQ7-7i-Lpm" id="lBd-4i-4ci"/>
                 <outlet property="selectedRadio" destination="Wbo-vp-ns8" id="64x-WT-SK9"/>
                 <outlet property="selectedTitle" destination="0j7-Qe-DWG" id="G15-TW-7zG"/>
                 <outlet property="testLabel" destination="ob2-G1-xBc" id="1wZ-66-CAK"/>

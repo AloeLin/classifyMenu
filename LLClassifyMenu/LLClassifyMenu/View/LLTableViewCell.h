@@ -32,6 +32,11 @@
  */
 @property (weak, nonatomic) IBOutlet UIButton *arrowsImage;
 
+/**
+ 文案提示的图标
+ */
+@property (weak, nonatomic) IBOutlet UIButton *remindButton;
+
 @property (weak, nonatomic) IBOutlet typeListView *typeListView;
 
 @property (assign,nonatomic) BOOL isOpenDetail;
