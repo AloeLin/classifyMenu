@@ -44,5 +44,7 @@
 //cell的高度
 @property (nonatomic,assign) CGFloat cellHeight;
 
+@property (nonatomic,assign) String *test;
+
 - (void)createCellTypeListViewsWithItemInfo:(NSArray *)infoArray isOpenDetail:(BOOL)isOpen;
 @end
